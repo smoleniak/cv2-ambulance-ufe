@@ -5,6 +5,7 @@ import { Component, Host, h } from '@stencil/core';
   styleUrl: 'ss-ambulance-wl-list.css',
   shadow: true,
 })
+
 export class SsAmbulanceWlList {
   waitingPatients: any[];
 
