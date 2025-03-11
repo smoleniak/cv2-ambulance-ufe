@@ -55,6 +55,7 @@ export class SsAmbulanceWlApp {
       <Host>
         { element === "editor"
         ? <ss-ambulance-wl-editor entry-id={entryId}
+            ambulance-id={this.ambulanceId} api-base={this.apiBase}
             oneditor-closed={ () => navigate("./list")} >
           </ss-ambulance-wl-editor>
         : <ss-ambulance-wl-list  ambulance-id={this.ambulanceId} api-base={this.apiBase} 
