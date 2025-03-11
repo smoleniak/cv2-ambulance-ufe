@@ -12,8 +12,9 @@ declare global {
 
 export class SsAmbulanceWlApp {
   @State() private relativePath = "";
-
   @Prop() basePath: string="";
+  @Prop() apiBase: string;
+  @Prop() ambulanceId: string;
 
   componentWillLoad() {
     const baseUri = new URL(this.basePath, document.baseURI || "/").pathname;
@@ -56,7 +57,7 @@ export class SsAmbulanceWlApp {
         ? <ss-ambulance-wl-editor entry-id={entryId}
             oneditor-closed={ () => navigate("./list")} >
           </ss-ambulance-wl-editor>
-        : <ss-ambulance-wl-list 
+        : <ss-ambulance-wl-list  ambulance-id={this.ambulanceId} api-base={this.apiBase} 
             onentry-clicked={ (ev: CustomEvent<string>)=> navigate("./entry/" + ev.detail) } >
           </ss-ambulance-wl-list>
         }

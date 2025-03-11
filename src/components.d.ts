@@ -7,12 +7,16 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface SsAmbulanceWlApp {
+        "ambulanceId": string;
+        "apiBase": string;
         "basePath": string;
     }
     interface SsAmbulanceWlEditor {
         "entryId": string;
     }
     interface SsAmbulanceWlList {
+        "ambulanceId": string;
+        "apiBase": string;
     }
 }
 export interface SsAmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
@@ -72,6 +76,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface SsAmbulanceWlApp {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         "basePath"?: string;
     }
     interface SsAmbulanceWlEditor {
@@ -79,6 +85,8 @@ declare namespace LocalJSX {
         "onEditor-closed"?: (event: SsAmbulanceWlEditorCustomEvent<string>) => void;
     }
     interface SsAmbulanceWlList {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         "onEntry-clicked"?: (event: SsAmbulanceWlListCustomEvent<string>) => void;
     }
     interface IntrinsicElements {
